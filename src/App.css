@@ -1,0 +1,41 @@
+.App {
+  display: flex;
+   justify-content: end;
+   background-color: black;
+}
+
+
+
+.App-header {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: white;
+}
+
+#inputs{
+  width: 100%;
+  height: 20%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#mini{
+  margin-top: 5%;
+
+  width: 30%;
+  height: 4%;
+
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: space-around;
+}
