@@ -1,9 +1,16 @@
 import styles from './btnText.module.scss'
 
-function BtnText({text}){
-    return<>
+function BtnText({text, id}){
+    const ButtonClass = `${styles.BtnText} ${id === "cadastrar" ? styles.cadastrar:""}`
     
-    <button id="btnText" className={styles.BtnText}>{text}</button>
+    return<>
+
+    <button className={ButtonClass}
+    id={id}
+    >{text}
+    </button>
+    
+
     
     </>
 }

@@ -1,32 +1,15 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Input from './components/ui/input/Input';
-import Button from './components/ui/btn_entrar/Btn_entrar';
-import MiniBtn from './components/ui/miniBtn/MiniBtn';
-import BtnText from './components/ui/btnText/BtnText';
+import LoginPage from './pages/login_page/LoginPage';
+
 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <Routes>
+     <Route path='/' element={<LoginPage/>}/>
 
-        <h1>Login</h1>
-    <div id='inputs'>   
-    <Input/>
-    <Input/>
-     </div>
-    <BtnText text={"Esqueceu sua Senha?"}/>
-
-    <Button text={"ENTRAR"}/>
-
-    <div id='mini'>
-    <MiniBtn />
-    <MiniBtn />
-    <MiniBtn />
-    </div>
-    <BtnText text={"Cadastrar"}/>
-      </header>
-    </div>
+    </Routes>
   );
 }
 
