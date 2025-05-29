@@ -1,17 +1,20 @@
 import styles from './input.module.scss';
 
 
-function Input(){
-    return<>
+function Input({name, type, onChange}) {
+    return <>
 
-    <input 
-    className={styles.Input}
-    ></input>
+        <input
+            type={type}
+            name={name}
+            className={styles.Input}
+            onChange={onChange}
+        ></input>
 
 
-    </> 
+    </>
 
 
-} 
+}
 
 export default Input;
