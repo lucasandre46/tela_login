@@ -1,13 +1,29 @@
 .Input{
     border: 3px solid;
-    width: 60%;
-    height: 20%;
+    width: 80%;
+    height: 40%;
     border-radius: 25vw;
 
     font-size: 120%;
+    padding-left: 1vw;
+}
+
+.Wrapper{
+    
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .label{
-    font-size: 100%;
+    font-size: 130%;
     color: black;
+    
+}
+
+.InputErro{
+    border: 3px solid red;
+    color: red;
 }

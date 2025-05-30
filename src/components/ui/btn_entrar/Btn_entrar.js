@@ -1,9 +1,16 @@
-import styles from './btn_entrar.module.scss'
+import styles from './btn_entrar.module.scss';
 
-function Button({text}) {
-    return <>
-        <button id="button" className={styles.Button}>{text}</button>
-    </>
+function Button({ text, tryLogin }) {
+  return (
+    <button
+      id="button"
+      className={styles.Button}
+      onClick={tryLogin}
+    >
+      {text}
+    </button>
+  );
 }
+
 
 export default Button;

@@ -4,13 +4,47 @@ import MiniBtn from './../../components/ui/miniBtn/MiniBtn';
 import BtnText from './../../components/ui/btnText/BtnText';
 import styles from './loginPage.module.scss'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function LoginPage() {
-    const [value, setValue] = useState('');
+    const [loginForm, setLoginForm] =
+        useState({
+            email: '',
+            senha: '',
+        })
 
-    const onChange = (e) =>{
-        setValue(e.target.value);
-        console.log("valor atual:", e.target.value);
+     const [LoginError, setLoginErro] = useState(false);
+
+    const onChange = (e) => {
+        const { name, value } = e.target;
+        setLoginForm(
+            (prev) => ({
+                ...prev,
+                [name]: value,
+            })
+        )
+    }
+
+    const navigate = useNavigate();
+
+    const cad = {
+        email: 'teste.da.silva@gmail.com',
+        senha: 'senha.da.silva',
+    }
+
+    const tryLogin = () => {
+        const { email, senha } = loginForm;
+
+        if (email === cad.email && senha === cad.senha) {
+            alert("Login feito com Sucesso!!!");
+            navigate('/home');
+            setLoginErro(false);
+            
+        }
+        else {
+            alert("Email ou Senha incorretos");
+            setLoginErro(true)
+        }
     }
 
     return <>
@@ -23,17 +57,21 @@ function LoginPage() {
                         type="email"
                         name="email"
                         onChange={onChange}
+                        erro={LoginError}
                     />
                     <Input
                         type="senha"
                         name="senha"
-                        
+                        onChange={onChange}
+                        erro={LoginError}
                     />
                     <BtnText text={"Esqueceu sua Senha?"} />
 
                 </div>
 
-                <Button text={"ENTRAR"} />
+                <Button text={"ENTRAR"}
+                    tryLogin={tryLogin}
+                />
 
                 <div className={styles.mini}>
                     <MiniBtn type={"google"} />

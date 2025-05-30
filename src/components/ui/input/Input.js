@@ -1,20 +1,24 @@
 import styles from './input.module.scss';
 
+function Input({ name, type, onChange, erro }) {
 
-function Input({name, type, onChange}) {
-    return <>
+  const labelText = type === 'email' ? 'E-mail:' :
+                    type === 'senha' ? 'Senha:' :
+                    '';
 
-        <input
-            type={type}
-            name={name}
-            className={styles.Input}
-            onChange={onChange}
-        ></input>
+  return (
+    <div className={styles.Wrapper}>
+      {labelText && <label htmlFor={name} className={styles.label}>{labelText}</label>}
 
-
-    </>
-
-
+      <input
+        type={type}
+        name={name}
+        id={name}
+        className={`${styles.Input} ${erro ? styles.InputErro : ''}`}
+        onChange={onChange}
+      />
+    </div>
+  );
 }
 
 export default Input;
