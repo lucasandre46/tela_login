@@ -1,0 +1,29 @@
+.HomePage {
+
+  width: 100vw;
+  height: 100vh;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   background: linear-gradient(90deg,
+            rgba(24, 37, 119, 1) 0%,
+            rgba(42, 74, 185, 1) 50%,
+            rgba(80, 191, 22, 1) 100%,);
+}
+
+.Card{
+  width: 100%;
+  height: 80%;
+
+  border-radius: 5vw;
+
+  background-color: rgba(80, 191, 22, 1);
+
+}
+
+h3, h1{
+  margin-left: 3%;
+}
+
