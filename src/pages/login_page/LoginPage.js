@@ -50,7 +50,7 @@ function LoginPage() {
     return <>
         <div className={styles.LoginPage}>
             <div className={styles.LoginBlock}>
-                <h1>Login</h1>
+                <h1 className={styles.txtLogin}>Login</h1>
                 <div className={styles.inputs}>
 
                     <Input
