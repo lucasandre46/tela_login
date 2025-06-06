@@ -11,7 +11,7 @@
             rgba(24, 37, 119, 1) 0%,
             rgba(42, 74, 185, 1) 50%,
             rgba(80, 191, 22, 1) 100%,);
-}
+          }
 
 .Card{
   width: 100%;
@@ -21,11 +21,14 @@
 
   background-color: rgba(80, 191, 22, 1);
 
+  box-shadow: 5px 5px 5px rgba(245, 186, 40, 1);
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  justify-content: center;
 
+  
 }
 
 .img{
@@ -34,6 +37,7 @@
   border-radius: 1vw;
 
   margin-top: 3%;
+
 }
 
 .divBtn{
@@ -44,5 +48,8 @@
   justify-content: space-around;
 }
 
+.mais{
+  margin-bottom: 10%;
+}
 
 

@@ -36,13 +36,13 @@ function LoginPage() {
         const { email, senha } = loginForm;
 
         if (email === cad.email && senha === cad.senha) {
-            alert("Login feito com Sucesso!!!");
+
             navigate('/home');
             setLoginErro(false);
             
         }
         else {
-            alert("Email ou Senha incorretos");
+
             setLoginErro(true)
         }
     }
