@@ -1,0 +1,29 @@
+.div_grande{
+     width: 100vw;
+  height: 90vh;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+   background: linear-gradient(90deg,
+            rgba(24, 37, 119, 1) 0%,
+            rgba(42, 74, 185, 1) 50%,
+            rgba(80, 191, 22, 1) 100%,);
+          }
+
+          .form{
+            background-color: white;
+            border-radius: 1vw;
+            width: 20%;
+            height: 50%;
+            
+            box-shadow: 8px 8px 5px rgba(245, 186, 40, 1);
+          }
+
+          .btn_fds{
+            
+          }
+
+

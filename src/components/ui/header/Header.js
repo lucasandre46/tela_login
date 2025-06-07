@@ -7,6 +7,7 @@ function Header(){
     <header className={styles.header}> 
         <Link className={styles.btnlogin} to={'/'} >Login</Link>
         <Link className={styles.btnhome} to={'/home'}>Home</Link>
+        <Link className={styles.btnhome} to={'/form'}>Form</Link>
     </header>
     
     

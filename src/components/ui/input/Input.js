@@ -4,6 +4,9 @@ function Input({ name, type, onChange, erro }) {
 
   const labelText = type === 'email' ? 'E-mail:' :
                     type === 'senha' ? 'Senha:' :
+                    type === 'number' ? 'ID:' :
+                    name === 'nome' ? 'Nome:' :
+                    name === 'img' ? 'Link da Imagem:':
                     '';
 
   return (

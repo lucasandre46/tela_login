@@ -70,7 +70,7 @@ function LoginPage() {
                 </div>
 
                 <Button text={"ENTRAR"}
-                    tryLogin={tryLogin}
+                    onClick={tryLogin}
                 />
 
                 <div className={styles.mini}>

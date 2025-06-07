@@ -1,11 +1,11 @@
 import styles from './btn_entrar.module.scss';
 
-function Button({ text, tryLogin }) {
+function Button({ text, onClick}) {
   return (
     <button
       id="button"
       className={styles.Button}
-      onClick={tryLogin}
+      onClick={onClick}
     >
       {text}
     </button>
