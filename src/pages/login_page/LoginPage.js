@@ -70,6 +70,7 @@ function LoginPage() {
                 </div>
 
                 <Button text={"ENTRAR"}
+                id={"entrar"}
                     onClick={tryLogin}
                 />
 

@@ -2,23 +2,16 @@ import styles from './btnCard.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 
-function Button({ type, name, index, cartoes, setCartoes  }) {
+function Button({ type, name, onClick   }) {
 
-    const excluirClick = () => {
-        if (type === "excluir") {
-            setCartoes([
-                ...cartoes.slice(0, index),
-                ...cartoes.slice(index + 1)
-            ]);
-        }
-    };
+   
 
 
     return (
        <button
             type="button"
             name={name}
-            onClick={type === "excluir" ? excluirClick : undefined}
+            onClick={onClick}
             className={
                 type === "excluir"
                     ? `${styles.botao} ${styles.excluir}`

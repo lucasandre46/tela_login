@@ -1,12 +1,12 @@
 import { useNavigate, useLocation } from "react-router-dom"
 import { useEffect, useState } from "react";
-import Button from "../../components/ui/btn_card/Btncard";
 import Input from "../../components/ui/input/Input";
 import styles from "./form.module.scss";
 
+
 function FormPage() {
   const location = useLocation();
-  const { cartoes = [], id } = location.state || {};
+  const { cartoes, id } = location.state || null;
 
   const [formData, setFormData] = useState({
     id: "",
@@ -41,27 +41,27 @@ function FormPage() {
 
     let novoVetor;
 
-    const existe = cartoes.some(c => c.id === novoCartao.id);
+    
 
-    if (!existe) {
+    if (id === undefined || id === "" || cartoes[id] === undefined) {
       novoVetor = [...cartoes, novoCartao];
     } else {
-      novoVetor = cartoes.map(c => c.id === novoCartao.id ? novoCartao : c);
+      novoVetor = [...cartoes];
+      novoVetor[id] = novoCartao;
     }
 
     navigate('/home', { state: { cartoes: novoVetor } });
   };
 
-  const cartaoExiste = cartoes.find(c => c.id === Number(id));
-
   return (
     <div className={styles.div_grande}>
 
       <h2 className={styles.titulo}>
-        {cartaoExiste ? "Atualizar Cartão" : "Criar Cartão"}
+        {id !== undefined && cartoes[id] ? "Atualizar Cartão" : "Criar Cartão"}
       </h2>
       <form onSubmit={handleSubmit} className={styles.form}>
-        <div>
+        
+        <div className={styles.div_card}>
           <Input
             type="number"
             name="id"
@@ -81,12 +81,10 @@ function FormPage() {
             value={formData.img}
           />
 
-        <Button
-          type="submit"
-          className={styles.btn_fds}
-        >
-          {cartaoExiste ? "Atualizar" : "Criar"}
-        </Button>
+        <button className={styles.btn}>
+          Salvar
+        </button>
+
         </div>
 
       </form>
