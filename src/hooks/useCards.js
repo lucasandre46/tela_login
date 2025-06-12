@@ -26,16 +26,14 @@ useEffect(() =>{
 
 const adicionarCartao = (cartao) => setCartoes([...cartoes, cartao]);
 
-const editarCartao = (index, novoCartao) => {
-    const novo = [...cartoes];
-    novo[index] = novoCartao;
-    setCartoes(novo);
+const editarCartao = (id, novoCartao) => {
+  const novo = cartoes.map((c) => (c.id === id ? novoCartao : c));
+  setCartoes(novo);
 };
 
-const removerCartao = (index) =>{
-    const novo = [...cartoes];
-    novo.splice(index, 1);
-    setCartoes(novo);
+const removerCartao = (id) => {
+  const novo = cartoes.filter((c) => c.id !== id);
+  setCartoes(novo);
 };
 
 return {

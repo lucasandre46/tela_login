@@ -1,20 +1,21 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useCards } from "./useCards";
 
 export const useFormCard = () => {
-    const location = useLocation();
-    const navigate = useNavigate();
-    const { cartoes, id } = location.state || null;
-}
+  const location = useLocation();
+  const navigate = useNavigate();
 
-const [formData, setFormData] = useState({
+  
+  const cartoes = location.state?.cartoes || [];
+  const id = location.state?.id;
+
+  const [formData, setFormData] = useState({
     id: "",
     nome: "",
     img: "",
   });
 
-   useEffect(() => {
+  useEffect(() => {
     if (id !== undefined) {
       const cartao = cartoes.find(c => c.id === Number(id));
       if (cartao) setFormData(cartao);
@@ -31,6 +32,7 @@ const [formData, setFormData] = useState({
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const novoCartao = {
       id: Number(formData.id),
       nome: formData.nome,
@@ -39,8 +41,6 @@ const [formData, setFormData] = useState({
 
     let novoVetor;
 
-    
-
     if (id === undefined || id === "" || cartoes[id] === undefined) {
       novoVetor = [...cartoes, novoCartao];
     } else {
@@ -48,5 +48,12 @@ const [formData, setFormData] = useState({
       novoVetor[id] = novoCartao;
     }
 
-    navigate('/home', { state: { cartoes: novoVetor } });
+    navigate("/home", { state: { cartoes: novoVetor } });
   };
+
+  return {
+    formData,
+    handleChange,
+    handleSubmit,
+  };
+};
