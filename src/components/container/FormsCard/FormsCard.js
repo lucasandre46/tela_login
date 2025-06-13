@@ -2,14 +2,17 @@ import styles from './../../../pages/form_page/form.module.scss';
 import Input from '../../ui/input/Input';
 
 
-function FormCard({formData, handleChange, handleSubmit,}){
+
+
+function FormCard({formData, handleChange, handleSubmit, id}){
 
      return (
     <div className={styles.div_grande}>
 
-      <h2 className={styles.titulo}>
-        {id !== undefined && cartoes[id] ? "Atualizar Cartão" : "Criar Cartão"}
-      </h2>
+     <h2 className={styles.titulo}>
+     {id === undefined || id === "" ? "Criar Cartão" : "Editar Cartão"}
+     </h2>
+
       <form onSubmit={handleSubmit} className={styles.form}>
         
         <div className={styles.div_card}>

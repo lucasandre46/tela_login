@@ -1,14 +1,14 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useCards } from './useCards'
 
 export const useFormCard = () => {
-  const location = useLocation();
   const navigate = useNavigate();
-
+  const location = useLocation();
   
-  const cartoes = location.state?.cartoes || [];
   const id = location.state?.id;
-
+  
+  const {cartoes, adicionarCartao, editarCartao} = useCards();
   const [formData, setFormData] = useState({
     id: "",
     nome: "",
@@ -16,9 +16,8 @@ export const useFormCard = () => {
   });
 
   useEffect(() => {
-    if (id !== undefined) {
-      const cartao = cartoes.find(c => c.id === Number(id));
-      if (cartao) setFormData(cartao);
+    if (id !== undefined && cartoes[id]) {
+        setFormData(cartoes[id]);
     }
   }, [id, cartoes]);
 
@@ -39,21 +38,19 @@ export const useFormCard = () => {
       img: formData.img,
     };
 
-    let novoVetor;
-
-    if (id === undefined || id === "" || cartoes[id] === undefined) {
-      novoVetor = [...cartoes, novoCartao];
+    if (id === undefined) {
+      adicionarCartao(novoCartao);
     } else {
-      novoVetor = [...cartoes];
-      novoVetor[id] = novoCartao;
+      editarCartao(id, novoCartao);
     }
 
-    navigate("/home", { state: { cartoes: novoVetor } });
+    navigate("/home");
   };
 
   return {
     formData,
     handleChange,
     handleSubmit,
+
   };
 };

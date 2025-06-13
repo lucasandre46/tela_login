@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-function CartaoGrid({ cartoes, alturaCartao = 550, larguraColuna = 350, nColuna = 4 }) {
+function CartaoGrid({ cartoes, alturaCartao = 550, larguraColuna = 350, nColuna = 4, onEdit, onDelete }) {
 
     const navigate = useNavigate();
 
@@ -40,6 +40,8 @@ function CartaoGrid({ cartoes, alturaCartao = 550, larguraColuna = 350, nColuna 
                 <div style={{ ...style, padding: "10px", boxSizing: "border-box", }}>
                     <CartaoItem
                         cartao={cartoes[index]}
+                        onDelete={() => onDelete(index)}
+                        onEdit={() => onEdit(index)}
                     />
                 </div>
             </>
@@ -50,12 +52,7 @@ function CartaoGrid({ cartoes, alturaCartao = 550, larguraColuna = 350, nColuna 
 
 
     return <>
-
-
-
-        <div className={styles.HomePage}>
-
-
+    
             <FixedSizeGrid
                 columnCount={nColuna}
                 columnWidth={larguraColuna}
@@ -71,7 +68,7 @@ function CartaoGrid({ cartoes, alturaCartao = 550, larguraColuna = 350, nColuna 
                 {Cell}
 
             </FixedSizeGrid>
-        </div>
+
     </>
 }
 

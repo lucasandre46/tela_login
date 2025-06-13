@@ -1,28 +1,28 @@
-
+import FormCard from '../../components/container/FormsCard/FormsCard';
 import { useFormCard } from './../../hooks/useFormCard';
 
 
 
-function FormPage(
-    handleChange,
-    handleSubmit,
+function FormPage() {
 
-) {
-  
-const {} = useFormCard
-  
-return <>
-<FormPage
+    const {
+        formData,
+        handleChange,
+        handleSubmit,
+    } = useFormCard();
 
-      onChange={handleChange}
-      onSubmit={handleSubmit}
-/>
-</>
- 
+    return <>
+        <FormCard
+            formData={formData}
+            onChange={handleChange}
+            onSubmit={handleSubmit}
+        />
+    </>
 
- 
 
- 
+
+
+
 }
 
 export default FormPage;
