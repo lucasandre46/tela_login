@@ -1,11 +1,7 @@
 import styles from './../../../pages/form_page/form.module.scss';
 import Input from '../../ui/input/Input';
 
-
-
-
-function FormCard({formData, handleChange, handleSubmit, id}){
-
+function FormCard({formData, handleChange, handleSubmit,  id}){
      return (
     <div className={styles.div_grande}>
 

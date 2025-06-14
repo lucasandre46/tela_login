@@ -13,10 +13,11 @@ function FormPage() {
 
     return <>
         <FormCard
-            formData={formData}
-            onChange={handleChange}
-            onSubmit={handleSubmit}
-        />
+    formData={formData}
+    handleChange={handleChange}
+    handleSubmit={handleSubmit}
+/>
+        
     </>
 
 

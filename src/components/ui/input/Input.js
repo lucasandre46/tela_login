@@ -1,6 +1,6 @@
 import styles from './input.module.scss';
 
-function Input({ name, type, onChange, erro }) {
+function Input({ name, type, onChange, erro, value }) {
 
   const labelText = type === 'email' ? 'E-mail:' :
                     type === 'senha' ? 'Senha:' :
@@ -19,6 +19,7 @@ function Input({ name, type, onChange, erro }) {
         id={name}
         className={`${styles.Input} ${erro ? styles.InputErro : ''}`}
         onChange={onChange}
+        value={value}
       />
     </div>
   );

@@ -23,7 +23,7 @@ export const useFormCard = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
+    setFormData(prev => ({
       ...prev,
       [name]: value,
     }));
@@ -44,7 +44,7 @@ export const useFormCard = () => {
       editarCartao(id, novoCartao);
     }
 
-    navigate("/home");
+    navigate('/home');
   };
 
   return {
