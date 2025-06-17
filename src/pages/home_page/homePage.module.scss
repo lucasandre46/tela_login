@@ -1,3 +1,5 @@
+@import './../../style/vars';
+
 .HomePage {
 
   width: 100vw;
@@ -7,10 +9,7 @@
    align-items: center;
    justify-content: center;
 
-   background: linear-gradient(90deg,
-            rgba(24, 37, 119, 1) 0%,
-            rgba(42, 74, 185, 1) 50%,
-            rgba(80, 191, 22, 1) 100%,);
+   background: var(--fnd-color);
           }
 
 .Card{
@@ -19,9 +18,9 @@
 
   border-radius: 1vw;
 
-  background-color: rgba(80, 191, 22, 1);
+  background-color: var(--bg-color);
 
-  box-shadow: 5px 5px 5px rgba(245, 186, 40, 1);
+  box-shadow: 5px 5px 5px var(--sdw-color);
 
   display: flex;
   flex-direction: column;
@@ -64,4 +63,5 @@
     background-color: greenyellow;
     border-radius: 25vw;
 }
+
 

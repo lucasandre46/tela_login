@@ -1,0 +1,17 @@
+:root {
+  &[data-theme='dark'] {
+    --bg-color: rgb(54, 143, 6);
+    --sdw-color: rgb(236, 137, 6);
+    --text-color: #ffff;
+    --fnd-color: linear-gradient(90deg,rgba(7, 16, 43, 1) 32%, rgba(34, 50, 107, 1) 60%, rgba(51, 130, 9, 1) 87%);
+   
+  }
+
+  &[data-theme='light'] {
+    --bg-color: rgba(80, 191, 22, 1);
+    --sdw-color: rgba(245, 186, 40, 1);
+    --text-color: #3333;
+    --fnd-color: linear-gradient(90deg, rgba(24, 37, 119, 1) 32%,rgba(42, 74, 185, 1) 60%,rgba(80, 191, 22, 1) 87%);
+
+  }
+}

@@ -1,0 +1,11 @@
+:root[data-theme = 'ligth']{
+    --bg-color:rgb(54, 143, 6);
+    --sdw-color:rgb(236, 137, 6);
+    --text-color:#ffff;
+}
+
+:root[data-theme = 'dark']{
+    --bg-color:rgba(80, 191, 22, 1);
+    --sdw-color:rgba(245, 186, 40, 1);
+    --text-color:#3333;
+}

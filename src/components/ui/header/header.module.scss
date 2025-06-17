@@ -1,12 +1,11 @@
+
+
 header{
     width: 100vw;
     height: 10vh;
 
     
-   background: linear-gradient(90deg,
-            rgba(24, 37, 119, 1) 0%,
-            rgba(42, 74, 185, 1) 50%,
-            rgba(80, 191, 22, 1) 100%,);
+   background: var(--fnd-color);
 
             display: flex;
             flex-direction: row;
@@ -41,3 +40,24 @@ header{
     border-radius: 25vw;
     color: rgba(80, 191, 22, 1);
 }
+
+.btntema{
+     background-color: rgba(24, 37, 119, 1);
+    height: 4vh;
+    width: 6vw;
+    margin-right: 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25vw;
+    color: rgba(80, 191, 22, 1);
+    font-size: 1vw;
+}
+
+
+
+
+
+
+
