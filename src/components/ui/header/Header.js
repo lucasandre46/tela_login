@@ -1,14 +1,28 @@
 import { Link } from 'react-router-dom'
 import styles from './header.module.scss'
 import {useTheme} from'./../../../theme/themeContext';
+import styled from 'styled-components';
+
+
+
+const HeaderStyle = styled.header`
+  width: 100vw;
+    height: 10vh;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+          
+`
 
 function Header(){
 
     const { toggleTheme, theme } = useTheme();
 
     return <>
-    
-    <header className={styles.header}> 
+  
+    <HeaderStyle> 
         <Link className={styles.btnlogin} to={'/'} >Login</Link>
         <Link className={styles.btnhome} to={'/home'}>Home</Link>
         
@@ -22,7 +36,7 @@ function Header(){
         <span className={styles.slider}></span>
       </label>
       
-    </header>
+    </HeaderStyle>
     
     
     </>
