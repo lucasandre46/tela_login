@@ -5,6 +5,8 @@ import BtnText from './../../components/ui/btnText/BtnText';
 import styles from './loginPage.module.scss'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
+
 
 function LoginPage() {
     const [loginForm, setLoginForm] =
@@ -32,13 +34,16 @@ function LoginPage() {
         senha: 'senha.da.silva',
     }
 
+    const { login } = useAuth();
+
     const tryLogin = () => {
         const { email, senha } = loginForm;
 
         if (email === cad.email && senha === cad.senha) {
-
+          
             navigate('/home');
             setLoginErro(false);
+            login();
             
         }
         else {

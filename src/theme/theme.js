@@ -3,7 +3,7 @@ export const lightTheme = {
     bgColor: 'rgba(80, 191, 22, 1)',
     sdwColor: 'rgba(245, 186, 40, 1)',
     textColor: '#3333',
-    fndColor: 'linear-gradient(90deg, rgba(24, 37, 119, 1) 32%, rgba(42, 74, 185, 1) 60%, rgba(80, 191, 22, 1) 87%)'
+    fndColor: 'linear-gradient(90deg, rgba(24, 37, 119, 1) 32%,rgba(42, 74, 185, 1) 60%,rgba(80, 191, 22, 1) 87%)'
   }
 };
 
