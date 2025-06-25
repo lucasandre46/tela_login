@@ -1,0 +1,41 @@
+.main {
+  width: 100vw;
+  height: 80vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.txt {
+  width: 30%;
+  height: 40%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  color: rgba(245, 186, 40, 1);
+  font-size: 130%;
+  font-family: var(--fontS);
+
+}
+
+.name {
+  font-size: 3vw;
+  text-shadow: -3px 2px rgba(228, 88, 21, 1);
+  font-family: var(--fontP);
+}
+
+.img_mega {
+  width: 23%;
+  height: 80%;
+  border-radius: 10%;
+  margin-right: 2%;
+}
+
+.mega_vd {
+  width: 20%;
+  height: 30%;
+  margin-left: 2%;
+}

@@ -8,16 +8,18 @@ import { ThemeProvider } from './theme/themeContext';
 import { GlobalStyle } from './style/GlobalStyled';
 import PrivateRoute from './PrivateRoute';
 import { AuthProvider } from './context/AuthContext';
+import PortfolioPage from './pages/portfolio_page/PortfolioPage';
 
 function App() {
   return (
     <AuthProvider>
-      <div className='App'>
         <ThemeProvider>
+      <div className='App'>
           <GlobalStyle />
           <Header />
           <Routes>
-            <Route path='/' element={<LoginPage />} />
+            <Route path='/' element={<PortfolioPage/>} />
+            <Route path='/login' element={<LoginPage />} />
             <Route path='/home' element={
               <PrivateRoute>
                 <HomePage />
@@ -30,8 +32,8 @@ function App() {
             } />
           </Routes>
 
-        </ThemeProvider>
       </div>
+        </ThemeProvider>
     </AuthProvider>
   );
 }
