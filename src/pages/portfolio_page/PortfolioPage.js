@@ -6,9 +6,13 @@ function PortfolioPage () {
 
     return<>
 
+
+
      <Main/>
  
      <footer className={styles.footer}></footer>
+
+    
     
     </>
 

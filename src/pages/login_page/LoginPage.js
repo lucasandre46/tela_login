@@ -88,6 +88,8 @@ function LoginPage() {
 
             </div>
         </div>
+
+        <div className={styles.div_fundo}/>
     </>
 }
 
